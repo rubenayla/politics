@@ -1,5 +1,5 @@
 # Politics
-A computer system (probably decentralized) in which we develop our political rights. In which we propose and vote what we want
+A computer system (probably decentralized) in which we propose and vote what we want.
 
 I wanna make politics easier and faster, and most importantly, guarantee that democracy works, with transparency and the true ability to vote what we want for ourselves. The system would contain the 'Constitution' of our country, and probably would explain which laws are aplicable for each person if that person has a profile with it's characteristics.
 
@@ -10,5 +10,6 @@ This system would guarantee transparency, and would make corruption impossible. 
 If a task is too specific, we could choose someone to make the decisions and plan everything to work, and then, choose if we like the results. Obviously we don't have to vote everything, and the details to make a political system stable, preventing fast random changes of opinion, have to be worked.
 
 The person/organization that has proposed some change could itself be willing to lead the details of the project, documenting all the info that they previously agreed, and the info that people asks for as the project develops.
+
 
 
