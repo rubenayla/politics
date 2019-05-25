@@ -12,4 +12,4 @@ If a task is too specific, we could choose someone to make the decisions and pla
 The person/organization that has proposed some change could itself be willing to lead the details of the project, documenting all the info that they previously agreed, and the info that people asks for as the project develops.
 
 
-
+![sketch.png](sketch.png)
