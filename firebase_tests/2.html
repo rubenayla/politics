@@ -4,52 +4,18 @@
 	<title>Politics</title>
 </head>
 <body>
-	<h1 id="bigOne"></h1>
 
 
+	<input id="txtEmail" type="email" placeholder="
+	Email">
 
+	<input id="txtPassword" type="password" placeholder="Password">
 
+	<button id="btnLogin">Log in</button>
+	<button id="btnSignUp">Sign up</button>
+	<button id="btnLogout">Log out</button>
 
-
-
-
-
-
-
-
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<!-- Core -->
 	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-	<!-- Authenticate -->
-	<!-- <script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-auth.js"></script> -->
-	<!-- SDK's -->
-	<!-- <script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-firestore.js"></script> -->
-
-	<!-- TODO: Add SDKs for Firebase products that you want to use
-			 https://firebase.google.com/docs/web/setup#config-web-app -->
-
-	<script>
-		// Your web app's Firebase configuration
-		var firebaseConfig = {
-			apiKey: "AIzaSyDyhRgik6Me-rDfs4ITRt54Nfb8ps8m45A",
-			authDomain: "politics-rubenayla.firebaseapp.com",
-			databaseURL: "https://politics-rubenayla.firebaseio.com",
-			projectId: "politics-rubenayla",
-			storageBucket: "politics-rubenayla.appspot.com",
-			messagingSenderId: "276802918108",
-			appId: "1:276802918108:web:e6c4843379ee62e0"
-		};
-		// Initialize Firebase
-		firebase.initializeApp(firebaseConfig);
-
-
-		var bigOne = document.getElementById('bigOne');
-		var dbRef = firebase.database().ref().child('text');
-		dbRef.on('value', snap => bigOne.innerText = snap.val());
-
-
-
-
-	</script>
+	<script type="text/javascript" src="2.js"></script>
 </body>
 </html>
