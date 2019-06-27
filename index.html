@@ -4,11 +4,12 @@
 	<title>Politics</title>
 </head>
 <body>
+	<h1 id="bigOne"></h1>
 
 
-	<h1>Firebase test</h1>
-	<textarea id="mainText" placeholder="Enter text here..."></textarea>
-	<button><i id="submitBtn" onclick="submitClick()" class="fa fa-arrow-right" aria-hidden="true">Submit</i></button>
+
+
+
 
 
 
@@ -18,7 +19,12 @@
 
 
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+	<!-- Core -->
+	<script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-app.js"></script>
+	<!-- Authenticate -->
+	<script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-auth.js"></script>
+	<!-- SDK's -->
+	<!-- <script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-firestore.js"></script> -->
 
 	<!-- TODO: Add SDKs for Firebase products that you want to use
 			 https://firebase.google.com/docs/web/setup#config-web-app -->
@@ -36,7 +42,15 @@
 		};
 		// Initialize Firebase
 		firebase.initializeApp(firebaseConfig);
+
+
+		firebase
+		.database()
+		.ref('users/' + userId)
+		.set({
+			username: "username",
+			email: "email",
+		});
 	</script>
-	<script src="index.js"></script>
 </body>
 </html>

@@ -1,0 +1,38 @@
+[debug] [2019-06-27T17:06:44.634Z] ----------------------------------------------------------------------
+[debug] [2019-06-27T17:06:44.636Z] Command:       /usr/bin/node /usr/local/bin/firebase init
+[debug] [2019-06-27T17:06:44.636Z] CLI Version:   7.0.2
+[debug] [2019-06-27T17:06:44.636Z] Platform:      linux
+[debug] [2019-06-27T17:06:44.636Z] Node Version:  v8.10.0
+[debug] [2019-06-27T17:06:44.636Z] Time:          Thu Jun 27 2019 19:06:44 GMT+0200 (CEST)
+[debug] [2019-06-27T17:06:44.636Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-06-27T17:06:44.640Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-06-27T17:06:44.640Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/rubenayla/politics
+
+[debug] [2019-06-27T17:12:10.971Z] TypeError: Cannot read property 'setRawMode' of null
+    at ReadStream.setRawMode (tty.js:59:16)
+    at Interface._setRawMode (readline.js:243:16)
+    at Interface.close (readline.js:367:10)
+    at ReadStream.ontermend (readline.js:156:10)
+    at emitNone (events.js:111:20)
+    at ReadStream.emit (events.js:208:7)
+    at endReadableNT (_stream_readable.js:1064:12)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-06-27T17:12:10.979Z] Error: write EIO
+    at _errnoException (util.js:1022:11)
+    at WriteWrap.afterWrite [as oncomplete] (net.js:880:14)
+[error] 
+[error] Error: An unexpected error has occurred.
