@@ -65,7 +65,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 				}
 				
 				if (snapshot.val().birthdate != undefined){
-					document.getElementById("birthdate-input").value = snapshot.val().brithdate;
+					document.getElementById("birthdate-input").value = snapshot.val().birthdate;
 				}
 				// TODO: MAKE THIS SHORT AND ELEGANT
 			};
