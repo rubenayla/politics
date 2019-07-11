@@ -32,7 +32,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 		document.getElementById("email-data").innerHTML = email;
 		document.getElementById("photourl-input").value = user.photoURL;
 
-		// Imprimir datos de DB
+		// Show DB data
 		/*
 		//Realtime
 		firebase.database().ref('users/' + user.uid + '/bio').on('value',function(snapshot){
@@ -64,8 +64,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 					document.getElementById("verify-email").innerHTML = '<button onclick="verifyEmail()">Verificar email</button>';
 				}
 				
-				if (user.age != undefined){
-					document.getElementById("age-input").innerHTML = snapshot.val().age;
+				if (snapshot.val().age != undefined){
+					document.getElementById("age-input").value = snapshot.val().age;
 				}
 				// TODO: MAKE THIS SHORT AND ELEGANT
 			};
@@ -194,7 +194,6 @@ function deleteAccount() {
 
 
 function update(){
-	// console.log('updating data...');
 	var user = firebase.auth().currentUser;
 	
 	// Update auth data (name and photoURL)
@@ -209,6 +208,7 @@ function update(){
 		// alert(error);
 	});
 
+	// console.log('updating data...' + user.uid);
 	// Profile data to DB
 	firebase.database().ref('users/' + user.uid).set({
 		email: user.email,
