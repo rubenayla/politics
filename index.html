@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Politics</title>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li>
+					<a href="index.html" id="icon">
+						<img src="files/logo.png" id="active-icon-image">
+					</a>
+				</li>
+				<li>
+					<a href="search.html">Search</a>
+				</li>
+				<li>
+					<a href="settings.html">Settings</a>
+				</li>
+				<li>
+					<a href="help.html">Help</a>
+				</li>
+				<li>
+					<a href="law.html">Law</a>
+				</li>
+			</ul>
+			<div>
+				<a id="login" href="account.html">Login</a>
+			</div>
+		</nav>
+	</header>
+	<div class="first-section">
+		<div id="projects-div">
+
+		</div>
+		<div>
+			<input type="text" name="title" placeholder="Título..." id="project-title-input">
+			<input type="text" name="description" placeholder="Descripción..." id="project-description-input">
+			<button onclick="upload_project()">Nuevo proyecto...</button>
+		</div>
+	</div>
+	<footer>
+		
+	</footer>
+
+
+
+	<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+	<script type="text/javascript">
+		// Initialize Firebase
+		var firebaseConfig = {
+		    apiKey: "AIzaSyDyhRgik6Me-rDfs4ITRt54Nfb8ps8m45A",
+		    authDomain: "politics-rubenayla.firebaseapp.com",
+		    databaseURL: "https://politics-rubenayla.firebaseio.com",
+		    projectId: "politics-rubenayla",
+		    storageBucket: "politics-rubenayla.appspot.com",
+		    messagingSenderId: "276802918108",
+		    appId: "1:276802918108:web:e6c4843379ee62e0"
+		};
+		firebase.initializeApp(firebaseConfig);
+	</script>
+	<script type="text/javascript" src="projects.js"></script>
+</body>
+</html>
