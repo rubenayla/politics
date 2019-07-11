@@ -63,6 +63,10 @@ firebase.auth().onAuthStateChanged(function(user) {
 				if (user.emailVerified == false){
 					document.getElementById("verify-email").innerHTML = '<button onclick="verifyEmail()">Verificar email</button>';
 				}
+				
+				if (user.age != undefined){
+					document.getElementById("age-input").innerHTML = snapshot.val().age;
+				}
 				// TODO: MAKE THIS SHORT AND ELEGANT
 			};
 		});
