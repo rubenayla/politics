@@ -27,6 +27,8 @@ function upload_project(){
 		description: document.getElementById('project-description-input').value
 	});
 
+	document.getElementById('project-title-input').value = null;
+	document.getElementById('project-description-input').value = null;
 }
 
 
