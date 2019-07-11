@@ -52,6 +52,7 @@ header a {
 	text-decoration: none;
 	border: solid 4px transparent;
 	transition: border .1s ease-out;
+	height: 56px; /*Not several lines*/
 }
 header a:hover {
 	color: #000;
@@ -107,4 +108,12 @@ header a:hover {
 
 .first-section {
 	padding: 80px 16px 50px 16px;
+}
+
+
+
+@media screen and (max-width: 600px){
+	header {
+		font-size: x-small;
+	}
 }
