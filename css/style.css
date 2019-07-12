@@ -199,9 +199,18 @@ header a:hover {
 }
 
 
-.first-section {
+#first-section {
 	padding: 80px 16px 50px 16px;
 	transition: padding .1s ease-out;
+}
+.section {
+	display: flex;
+	justify-content: center;
+
+	padding: 32px 16px;
+	flex-flow: column wrap;
+
+	background: white;
 }
 ion-icon {
 	font-size: 22px;
