@@ -274,7 +274,16 @@ footer a:hover {
 
 
 @media screen and (max-width: 600px){
-	header {
+	body{
+		font-size: small;
+	}
+	header{
 		font-size: x-small;
+	}
+	header nav {
+		padding: 0;
+	}
+	header a {
+		padding: 0;
 	}
 }
