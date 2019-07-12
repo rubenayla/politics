@@ -116,6 +116,7 @@ header a:hover {
 #add-button:hover {
 	color: white;
 	background: #421ebc;
+	box-shadow: 1px 1px 4px 0 #0006;
 }
 #add-div {
 	position: fixed;
@@ -138,6 +139,10 @@ header a:hover {
 }
 #has-to-be-verified {
 	padding: 0 16px 32px 16px;
+}
+#add-project {
+	display: flex;
+	flex-flow: column;
 }
 #add-div input, #add-div textarea {
 	font-size: small;
@@ -167,7 +172,7 @@ header a:hover {
 #add-div button:hover {
 	color: white;
 	background: #421ebc;
-	box-shadow: 1px 2px 4px 0 #0004;
+	box-shadow: 1px 1px 8px 0 #0006;
 }
 
 

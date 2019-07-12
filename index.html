@@ -47,15 +47,19 @@
 		</nav>
 	</header>
 	<div id="add-div">
+
 		<div id="has-to-be-verified">
 			<p>Para poder añadir un proyecto debes iniciar sesión y verificar el email con el siguiente enlace:</p>
 			<a href="account.html">Cuenta</a>
 		</div>
-		<input type="text" name="title" placeholder="Título..." id="project-title-input">
-		<textarea placeholder="Descripción..." id="project-description-input"></textarea>
-		<div>
-			<button onclick="upload_project()">Crear proyecto</button>
+		<div id="add-project">
+			<input type="text" name="title" placeholder="Título..." id="project-title-input">
+			<textarea placeholder="Descripción..." id="project-description-input"></textarea>
+			<div>
+				<button onclick="add_project()">Crear proyecto</button>
+			</div>
 		</div>
+
 	</div>
 	<div class="first-section">
 		<div id="projects-div">

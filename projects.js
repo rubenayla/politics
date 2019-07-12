@@ -23,10 +23,12 @@ firebase.database().ref('projects').orderByChild('date').on('value',function(sna
 firebase.auth().onAuthStateChanged(function(user){
 	if(user.emailVerified){
 		document.getElementById('has-to-be-verified').style.display = 'none';
+	} else {
+		
 	}
-}
+});
 
-function upload_project(){
+function add_project(){
 	firebase.database().ref('projects/' + String(project_quantity + 1)).set({
 		date: 'deit',
 		title: document.getElementById('project-title-input').value,
