@@ -21,10 +21,11 @@ firebase.database().ref('projects').orderByChild('date').on('value',function(sna
 });
 
 firebase.auth().onAuthStateChanged(function(user){
-	if(user.emailVerified){
-		document.getElementById('has-to-be-verified').style.display = 'none';
-	} else {
-		
+	if(user){
+		if(user.emailVerified){
+			document.getElementById('has-to-be-verified').style.display = 'none';
+			document.getElementById('add-project').style.display = 'flex';
+		}
 	}
 });
 

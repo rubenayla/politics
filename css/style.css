@@ -141,7 +141,7 @@ header a:hover {
 	padding: 0 16px 32px 16px;
 }
 #add-project {
-	display: flex;
+	/* Display given by projects.js*/
 	flex-flow: column;
 }
 #add-div input, #add-div textarea {
