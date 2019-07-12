@@ -6,7 +6,7 @@ html, body {
 }
 body {
 	min-height: 100vh;
-	padding-bottom: 140px;/*Space for the footer*/
+	padding-bottom: 56px;/*Space for the footer*/
 	position: relative;
 
 	background: #fff;
@@ -113,6 +113,70 @@ ion-icon {
 	font-size: 22px;
 	margin: 8px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.separator {
+	margin: 0 16px;
+}
+.separator div {
+	height: 0;
+	margin: 0;
+	border-top: 1px solid #ccc;
+}
+footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;  /*Inside the body, with position relative*/
+	bottom: 0;
+	width: 100%;
+	/*min-height: 56px;*/
+	font-size: small;
+	overflow: hidden;
+	text-align: center;
+}
+.footer-left, .footer-right {
+	display: flex;
+	width: 50%;
+	line-height: 24px;
+	padding: 16px 24px;
+}
+.footer-left {
+	flex-flow: row wrap;
+}
+.footer-right {
+	flex-flow: row-reverse wrap;
+}
+footer a {
+	color: #444;
+	text-decoration: none;
+	font-weight: normal;
+}
+footer a:hover {
+	color: #000;
+	text-decoration: none;
+	font-weight: normal;
+}
+
 
 
 
