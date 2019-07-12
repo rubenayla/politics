@@ -22,6 +22,9 @@ a:hover {
 	color: #421ebc;
 	text-decoration: underline;
 }
+button {
+	outline: none;
+}
 header {
 	position: fixed;
 	top: 0;

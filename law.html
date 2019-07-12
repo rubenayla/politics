@@ -33,14 +33,35 @@
 					<a href="law.html" class="active">Ley</a>
 				</li>
 				<li>
+					<a href="help.html">Ayuda/Acerca de</a><!-- And feedback -->
+				</li>
+			</ul>
+			<ul>
+				<li>
 					<a href="account.html">Ajustes/Cuenta</a>
 				</li>
 				<li>
-					<a href="help.html">Ayuda/Acerca de</a>
+					<button onclick="show_add_projects()" id="add-button">Añadir</button>
 				</li>
 			</ul>
 		</nav>
 	</header>
+	<div id="add-projects-div" style="display: none;">
+
+		<div id="has-to-be-verified">
+			<p>Para poder añadir un proyecto debes iniciar sesión y verificar el email con el siguiente enlace:</p>
+			<a href="account.html">Cuenta</a>
+		</div>
+
+		<div id="add-project" style="display: none;">
+			<input type="text" name="title" placeholder="Título..." id="project-title-input">
+			<textarea placeholder="Descripción..." id="project-description-input"></textarea>
+			<div>
+				<button onclick="add_project()">Crear proyecto</button>
+			</div>
+		</div>
+	</div>
+
 	<div class="first-section" style="display: flex; flex-flow: column;">
 		<h3>Búsqueda sencilla de legislación</h3>
 		<a href="https://www.boe.es/legislacion/legislacion.php" target="_blank">https://www.boe.es/legislacion/legislacion.php</a>
@@ -57,5 +78,20 @@
 			
 		</div>
 	</footer>
+	<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+	<script type="text/javascript">
+		// Initialize Firebase
+		var firebaseConfig = {
+		    apiKey: "AIzaSyDyhRgik6Me-rDfs4ITRt54Nfb8ps8m45A",
+		    authDomain: "politics-rubenayla.firebaseapp.com",
+		    databaseURL: "https://politics-rubenayla.firebaseio.com",
+		    projectId: "politics-rubenayla",
+		    storageBucket: "politics-rubenayla.appspot.com",
+		    messagingSenderId: "276802918108",
+		    appId: "1:276802918108:web:e6c4843379ee62e0"
+		};
+		firebase.initializeApp(firebaseConfig);
+	</script>
+	<script type="text/javascript" src="projects.js"></script>
 </body>
 </html>
