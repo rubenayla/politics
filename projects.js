@@ -45,7 +45,13 @@ function add_project(){
 }
 
 
-
+function show_add_projects(){
+	if(document.getElementById('add-projects-div').style.display == 'none'){
+		document.getElementById('add-projects-div').style.display = 'flex';
+	} else {
+		document.getElementById('add-projects-div').style.display = 'none';
+	}
+}
 
 
 

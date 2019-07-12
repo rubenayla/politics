@@ -118,7 +118,7 @@ header a:hover {
 	background: #421ebc;
 	box-shadow: 1px 1px 4px 0 #0006;
 }
-#add-div {
+#add-projects-div {
 	position: fixed;
 	display: flex;
 	flex-flow: column;
@@ -144,7 +144,7 @@ header a:hover {
 	/* Display given by projects.js*/
 	flex-flow: column;
 }
-#add-div input, #add-div textarea {
+#add-projects-div input, #add-projects-div textarea {
 	font-size: small;
 	padding: 8px;
 	margin: 2px;
@@ -155,10 +155,10 @@ header a:hover {
 	background: transparent;
 	border: 1px solid #666;
 }
-#add-div input::placeholder {
+#add-projects-div input::placeholder {
 	color: #888;
 }
-#add-div button {
+#add-projects-div button {
 	font-size: small;
 	padding: 8px;
 	margin: 4px;
@@ -169,7 +169,7 @@ header a:hover {
 	border-radius: 6px;
 	transition: color .1s, background .1s;
 }
-#add-div button:hover {
+#add-projects-div button:hover {
 	color: white;
 	background: #421ebc;
 	box-shadow: 1px 1px 8px 0 #0006;
