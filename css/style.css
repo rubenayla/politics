@@ -200,7 +200,7 @@ header a:hover {
 
 
 #first-section {
-	padding: 80px 16px 50px 16px;
+	padding: 80px 16px 50px 16px !important;
 	transition: padding .1s ease-out;
 }
 .section {
