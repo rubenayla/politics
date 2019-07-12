@@ -97,11 +97,8 @@ function register(){
 	var pwd = document.getElementById("pwd-input-login").value;
 
 	firebase.auth().createUserWithEmailAndPassword(email, pwd).catch(function(error) {
-		// Handle Errors here.
-		var errorCode = error.code;
-		var errorMessage = error.message;
-		
-		alert("Error: " + errorMessage);
+		alert('Error: ' + error.message);
+		console.log(error);
 	});
 	// Just after registry, the onAuthStateChanged function will try to show data that 
 	// still doesn't exist in the DB, and will show an error. Wait 100ms to have a 
@@ -129,7 +126,8 @@ function google_login(){
 		// The firebase.auth.AuthCredential type that was used.
 		var credential = error.credential;
 		// ...
-		alert(error);
+		alert('Error: ' + error.message);
+		console.log(error);
 	});
 }
 // function twitter_login(){
@@ -160,7 +158,8 @@ function passwordForgotten(){
 	auth.sendPasswordResetEmail(email).then(function() {
 		alert("Email sent");
 	}).catch(function(error) {
-		alert(error);
+		alert('Error: ' + error.message);
+		console.log(error);
 	});
 }
 function resetPassword(){
@@ -170,14 +169,16 @@ function resetPassword(){
 	auth.sendPasswordResetEmail(email).then(function() {
 		alert("Email sent");
 	}).catch(function(error) {
-		alert(error);
+		alert('Error: ' + error.message);
+		console.log(error);
 	});
 }
 function verifyEmail(){
 	firebase.auth().currentUser.sendEmailVerification().then(function(){
 		alert("Email sent");
 	}).catch(function(error){
-		alert(error);
+		alert('Error: ' + error.message);
+		console.log(error);
 	})
 }
 
@@ -187,8 +188,8 @@ function deleteAccount() {
 	user.delete().then(function() {
 		// User deleted.
 	}).catch(function(error) {
-		// An error happened.
-		alert(error);
+		alert('Error: ' + error.message);
+		console.log(error);
 	});
 }
 

@@ -26,6 +26,9 @@ function upload_project(){
 		title: document.getElementById('project-title-input').value,
 		description: document.getElementById('project-description-input').value,
 		uid: firebase.auth().currentUser.uid
+	}).catch(function(error){
+		alert('Error: ' + error.message);
+		console.log(error);
 	});
 
 	document.getElementById('project-title-input').value = null;
