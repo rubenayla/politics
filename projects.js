@@ -24,7 +24,8 @@ function upload_project(){
 	firebase.database().ref('projects/' + String(project_quantity + 1)).set({
 		date: 'deit',
 		title: document.getElementById('project-title-input').value,
-		description: document.getElementById('project-description-input').value
+		description: document.getElementById('project-description-input').value,
+		uid: firebase.auth().currentUser.uid
 	});
 
 	document.getElementById('project-title-input').value = null;
