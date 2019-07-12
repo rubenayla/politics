@@ -33,34 +33,39 @@
 					<a href="law.html">Ley</a>
 				</li>
 				<li>
+					<a href="help.html">Ayuda/Acerca de</a><!-- And feedback -->
+				</li>
+			</ul>
+			<ul>
+				<li>
 					<a href="account.html">Ajustes/Cuenta</a>
 				</li>
 				<li>
-					<a href="help.html">Ayuda/Acerca de</a>
+					<button onclick="add_project()" id="add-button">Añadir</button>
 				</li>
 			</ul>
 		</nav>
 	</header>
+	<div id="add-div">
+		<div id="has-to-be-verified">
+			<p>Para poder añadir un proyecto debes iniciar sesión y verificar el email con el siguiente enlace:</p>
+			<a href="account.html">Cuenta</a>
+		</div>
+		<input type="text" name="title" placeholder="Título..." id="project-title-input">
+		<textarea placeholder="Descripción..." id="project-description-input"></textarea>
+		<div>
+			<button onclick="upload_project()">Crear proyecto</button>
+		</div>
+	</div>
 	<div class="first-section">
 		<div id="projects-div">
 
-		</div>
-		<div>
-			<input type="text" name="title" placeholder="Título..." id="project-title-input">
-			<input type="text" name="description" placeholder="Descripción..." id="project-description-input">
-			<button onclick="upload_project()">Nuevo proyecto... (debes tener el email verificado)</button>
 		</div>
 	</div>
 	<div class="separator">
 		<div></div>
 	</div>
 	<footer>
-		<div class="footer-left">
-			<a href="cookies.html" target="_blank">Cookies</a>
-		</div>
-		<div class="footer-right">
-			
-		</div>
 		<div class="footer-left">
 			<a href="cookies.html" target="_blank">Cookies</a>
 		</div>

@@ -3,9 +3,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 		// User is signed in, so show the loggedin-div
 		document.getElementById("login-div").style.display = "none";
 		document.getElementById("loggedin-div").style.display = "block";
-		
-		// Get user auth and DB data
-		var user = firebase.auth().currentUser;
 
 		var name = user.displayName;
 		var email = user.email;

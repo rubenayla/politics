@@ -13,6 +13,15 @@ body {
 	font-family: 'Open Sans', Roboto, Helvetica, sans-serif;
 	color: var(--text-color);
 }
+a {
+	color: #421ebc;
+	text-decoration: none;
+	font-weight: bold;
+}
+a:hover {
+	color: #421ebc;
+	text-decoration: underline;
+}
 header {
 	position: fixed;
 	top: 0;
@@ -50,6 +59,7 @@ header a {
 	padding: 12px 4px;
 	color: #777;
 	text-decoration: none;
+	font-weight: normal;
 	border: solid 4px transparent;
 	transition: border .1s ease-out;
 	height: 56px; /*Not several lines*/
@@ -57,6 +67,7 @@ header a {
 header a:hover {
 	color: #000;
 	border-bottom: solid 4px black;
+	text-decoration: none;
 }
 .active {
 	border-bottom: solid 4px #777;
@@ -92,6 +103,81 @@ header a:hover {
 	border: solid 2px black;
 	border-radius: 999px;
 }
+#add-button {
+	font-size: 14px;
+	color: #421ebc;
+	background: transparent;
+	border: 1px solid #421ebc;
+	border-radius: 8px;
+	transition: color .1s, background .1s;
+	padding: 10px;
+	margin-left: 8px;
+}
+#add-button:hover {
+	color: white;
+	background: #421ebc;
+}
+#add-div {
+	position: fixed;
+	display: flex;
+	flex-flow: column;
+	width: 60%;
+	max-height: 90%;
+	z-index: 10;
+	top: 54px; /*2px over the header*/
+	right: 16px;
+	
+	background: #fff;
+	box-shadow: 0 1px 8px 0px #0004;
+	border-radius: 8px;
+
+	padding: 32px;
+	justify-content: center;
+	text-align: center;
+	font-size: medium;
+}
+#has-to-be-verified {
+	padding: 0 16px 32px 16px;
+}
+#add-div input, #add-div textarea {
+	font-size: small;
+	padding: 8px;
+	margin: 2px;
+	border-radius: 8px;
+
+	transition: color .1s, background .1s;
+	color: #222;
+	background: transparent;
+	border: 1px solid #666;
+}
+#add-div input::placeholder {
+	color: #888;
+}
+#add-div button {
+	font-size: small;
+	padding: 8px;
+	margin: 4px;
+
+	color: #421ebc;
+	background: transparent;
+	border: 1px solid #421ebc;
+	border-radius: 6px;
+	transition: color .1s, background .1s;
+}
+#add-div button:hover {
+	color: white;
+	background: #421ebc;
+	box-shadow: 1px 2px 4px 0 #0004;
+}
+
+
+
+
+
+
+
+
+
 
 #login {
 	background: white;
@@ -112,9 +198,8 @@ header a:hover {
 ion-icon {
 	font-size: 22px;
 	margin: 8px;
+
 }
-
-
 
 
 
