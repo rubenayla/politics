@@ -29,7 +29,6 @@ header {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	height: 56px;
 	z-index: 10;
 
 	font-size: 16px;
@@ -47,7 +46,7 @@ header nav {
 	align-items: center;
 	flex-flow: row wrap;
 	padding: 0px 16px;
-	height: 56px;
+	min-height: 56px;
 }
 header ul {
 	display: flex;
@@ -202,6 +201,7 @@ header a:hover {
 
 .first-section {
 	padding: 80px 16px 50px 16px;
+	transition: padding .1s ease-out;
 }
 ion-icon {
 	font-size: 22px;
@@ -285,5 +285,11 @@ footer a:hover {
 	}
 	header a {
 		padding: 0;
+	}
+
+}
+@media screen and (max-width: 500px){
+	.first-section {
+		padding: 136px 16px 50px 16px;
 	}
 }
