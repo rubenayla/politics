@@ -17,6 +17,7 @@ firebase.auth().onAuthStateChanged(function(user){
 });
 
 function add_project(){
+	var project_quantity = Object.keys(projects).length;
 	firebase.database().ref('projects/' + String(project_quantity + 1)).set({
 		date: 'deit',
 		title: document.getElementById('project-title-input').value,
