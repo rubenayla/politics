@@ -19,11 +19,12 @@ a {
 	font-weight: bold;
 }
 a:hover {
-	color: #421ebc;
 	text-decoration: underline;
 }
-button {
+
+button, input, textarea {
 	outline: none;
+	font-size: 100%;
 }
 header {
 	position: fixed;
@@ -120,7 +121,7 @@ header a:hover {
 	background: #421ebc;
 	box-shadow: 1px 1px 4px 0 #0006;
 }
-#add-projects-div {
+#add-projects {
 	position: fixed;
 	display: flex;
 	flex-flow: column;
@@ -146,7 +147,7 @@ header a:hover {
 	/* Display given by projects.js*/
 	flex-flow: column;
 }
-#add-projects-div input, #add-projects-div textarea {
+#add-projects input, #add-projects textarea {
 	font-size: small;
 	padding: 8px;
 	margin: 2px;
@@ -157,10 +158,10 @@ header a:hover {
 	background: transparent;
 	border: 1px solid #666;
 }
-#add-projects-div input::placeholder {
+#add-projects input::placeholder {
 	color: #888;
 }
-#add-projects-div button {
+#add-projects button {
 	font-size: small;
 	padding: 8px;
 	margin: 4px;
@@ -171,79 +172,53 @@ header a:hover {
 	border-radius: 6px;
 	transition: color .1s, background .1s;
 }
-#add-projects-div button:hover {
+#add-projects button:hover {
 	color: white;
 	background: #421ebc;
 	box-shadow: 1px 1px 8px 0 #0006;
 }
 
+.first-section {
+	display: flex;
+	flex-flow: column wrap;
+	padding: 32px 16px;
+	margin-top: 56px;
 
-
-
-
-
-
-
-
-
-#login {
-	background: white;
-	color: blue;
-	padding: 6px 20px;
-	margin-right: 8px;
-	border: solid 1px blue;
-	border-radius: 8px;
-}
-#login:hover {
-	box-shadow: 2px 2px 4px 0 #0004;
-}
-
-
-#first-section {
-	padding: 80px 16px 50px 16px !important;
 	transition: padding .1s ease-out;
 }
 .section {
 	display: flex;
-	justify-content: center;
-
-	padding: 32px 16px;
 	flex-flow: column wrap;
-
-	background: white;
+	
+	padding: 32px 16px;
 }
 ion-icon {
 	font-size: 22px;
 	margin: 8px;
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .separator {
-	margin: 0 16px;
-}
-.separator div {
+	margin: 24px 0;
 	height: 0;
-	margin: 0;
 	border-top: 1px solid #ccc;
 }
+.loading-icon {
+	display: flex;
+	justify-content: center;
+}
+.loading-icon img {
+	width: 64px;
+}
+
+
+
+
+
+
+
+#footer-separator {
+	margin: 0 16px;
+}
+
 footer {
 	display: flex;
 	justify-content: space-between;
@@ -275,7 +250,7 @@ footer a {
 }
 footer a:hover {
 	color: #000;
-	text-decoration: none;
+	text-decoration: underline;
 	font-weight: normal;
 }
 

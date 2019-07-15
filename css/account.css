@@ -1,116 +1,106 @@
-#log-div {
+#log-and-account {
 	display: flex;
+	/*Horizontal so that its width can be <100% and adapt*/
+	flex-flow: row wrap;
 	justify-content: center;
 }
-#login-div {
-	width: 45%;
-	padding: 32px;
-	background: #f4f7f9;
-	box-shadow: 2px 2px 8px 0px #0008;
-	border-radius: 8px;
+
+#log {
 	display: flex;
-	flex-flow: column;
+	flex-flow: column wrap;
 	text-align: center;
-	justify-content: center;
-	min-width: 320px;
-	max-width: 450px;
+	padding: 32px;
+	min-width: 50%;
+
+	border-radius: 16px;
+	box-shadow: 2px 2px 8px 0 #0008;
+	background: #fafafc;
 }
-#login-div h2 {
-	margin: 0 0 16px;
+.log-title {
+	font-size: x-large;
+	margin: 16px 16px 32px 16px;
 }
-#social-btn-div {
+#social-btns {
 	display: flex;
 	flex-flow: column;
+}
+#social-btns div {
+	display: flex;
 	justify-content: center;
+}
+.social-btn {
+	display: flex;
+	align-items: center;
+	padding: 0 16px 0 0;
+
+	background: transparent;
+	border-radius: 8px;
+	transition: color .1s, background .1s;
+	/*Color and border are custom properties*/
+}
+.social-btn ion-icon {
+	font-size: 24px;
+	padding: 7px 8px;
+	margin: 8px;
+	/*24 + 2*(7 +8 +1) = 56*/
 }
 #google-btn {
 	color: #e60600;
-	background: transparent;
 	border: 1px solid #e60600;
-	border-radius: 6px;
-	transition: color .1s, background .1s;
-	padding: 8px;
-	margin: 2px;
-	line-height: 34px;
-
-	display: flex;
-	align-items: center;
-
+	justify-content: center;
 }
 #google-btn:hover {
 	background: #d42420;
 	color: white;
 }
-/*#twitter-btn {
-	color: #0088bb;
-	background: transparent;
-	border: 1px solid #0088bb;
-	border-radius: 6px;
-	transition: color .1s, background .1s;
-	padding: 8px;
-	margin: 2px;
-
-	display: flex;
-	align-items: center;
-}
-#twitter-btn:hover {
-	background: #0088bb;
-	color: white;
-}*/
-.separator {
-	margin: 16px 0;
-	height: 0;
-	border-top: 1px solid #ccc;
-}
-#manual-log-div {
+#manual-login {
 	display: flex;
 	flex-flow: column;
-
 }
-#inputs {
-	margin-bottom: 8px;
+#login-inputs {
+	margin-bottom: 16px;
 }
-.input-group {
+.input-object {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	padding: 8px;
 }
-#email-input-login, #pwd-input-login {
-	background: white;
+.input-object input {
 	padding: 8px;
 	margin-left: 8px;
+	
 	border: none;
+	background: transparent;
 	box-shadow: inset 0 0 4px 0 #0004;
 	border-radius: 6px;
+	font-size: 90%;
 }
-#btns {
+#log-btns {
 	display: flex;
 	flex-flow: column;
-	justify-content: center;
 	padding: 8px;
 }
-#login-btn, #register-btn, #forgotten-btn {
-	background: transparent;
-	border-radius: 6px;
+.log-btn {
 	padding: 12px;
 	margin: 2px;
+
+	border-radius: 6px;
 	transition: color .1s, background .1s;
-	
+	background: transparent;
+	font-size: 90%;
 }
 #login-btn {
 	color: #d42420;
 	border: 1px solid #d42420;
-	
 }
 #register-btn {
 	color: #0088bb;
 	border: 1px solid #0088bb;
-	
 }
 #forgotten-btn {
 	color: #683838;
 	border: 1px solid #683838;
-	
 }
 #login-btn:hover {
 	color: white;
@@ -126,20 +116,56 @@
 }
 
 
-
-
-#profile-data {
+#account {
 	display: flex;
-	flex-flow: column wrap;
-	justify-content: center;
+	flex-flow: column;
+	padding: 32px;
+	margin: 16px;
+
+	border-radius: 16px;
+	box-shadow: 2px 2px 8px 0 #0008;
+	background: #fafafc;
 }
-#profile-data input, #email-data {
-	font-size: small;
-	color: #222;
-	background: transparent;
-	border: 1px solid #222;
-	border-radius: 6px;
+#account-data {
+	display: flex;
+	flex-flow: column;
+}
+#account-data input, #account-data textarea, #account-email-data {
 	padding: 8px;
-	margin: 2px;
+	margin: 6px 0 12px 0;
+	font-size: medium;
+	
+	background: transparent;
+	border: 1px solid #ccc;
+	box-shadow: inset 0 0 2px 0 #0004;
+	border-radius: 6px;
+}
+#account-email-data {
+	color: #444;
+}
+.account-btns {
+	display: flex;
+	justify-content: space-between;
+	margin: 8px;
+}
+.account-btn {
+	padding: 8px;
+	margin: 4px;
+	justify-content: center;
+	font-size: 90%;
+
+	background: transparent;
+	color: #421ebc;
 	transition: color .1s, background .1s;
+	border: 1px solid #421ebc;
+	border-radius: 6px;
+}
+.account-btn:hover {
+	color: white;
+	background: #421ebc;
+}
+#delete-account-btn:hover {
+	color: white;
+	background: red;
+	border-color: red;
 }

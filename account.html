@@ -47,7 +47,7 @@
 			</ul>
 		</nav>
 	</header>
-	<div id="add-projects-div" style="display: none;">
+	<div id="add-projects" style="display: none;">
 
 		<div id="has-to-be-verified">
 			<p>Para poder añadir un proyecto debes iniciar sesión y verificar el email con el siguiente enlace:</p>
@@ -63,90 +63,72 @@
 		</div>
 	</div>
 	
-	<div id="first-section" id="log-div">
 
-		<div id="login-div">
-			<h2>Iniciar Sesión</h2>
-			<div id="social-btn-div">
-				<button onclick="google_login()" id="google-btn">
-					<ion-icon name="logo-google"></ion-icon>
-					Iniciar sesión con Google
-				</button>
-				<!-- <button onclick="twitter_login()" id="twitter-btn">
-					<ion-icon name="logo-twitter"></ion-icon>
-					Iniciar sesión con Twitter
-				</button> -->
+	<div class="first-section" id="log-and-account">
+		<!-- Modifiable by login.js -->
+		<div id="log">
+			<span class="log-title">Iniciar sesión</span>
+			<div id="social-btns">
+				<div>
+					<button onclick="google_login()" class="social-btn" id="google-btn">
+						<ion-icon name="logo-google"></ion-icon>
+						Iniciar sesión con Google
+					</button>
+				</div>
 			</div>
 			<div class="separator"></div>
-			<div id="manual-log-div">
-				<div id="inputs">
-					<div class="input-group">
+			<div id="manual-login">
+				<div id="login-inputs">
+					<div class="input-object">
 						<ion-icon name="mail"></ion-icon>
-						<input type="email" placeholder="ejemplo@gmail.com" id="email-input-login">
+						<input type="email" placeholder="ejemplo@gmail.com" id="email-input">
 					</div>
-					<div class="input-group">
+					<div class="input-object">
 						<ion-icon name="lock"></ion-icon>
-						<input type="password" placeholder="contraseña..." id="pwd-input-login">
+						<input type="password" placeholder="contraseña... (>= 6 cars)" id="pwd-input">
 					</div>
 				</div>
-				<div id="btns">
-					<button onclick="login()" id="login-btn">Iniciar Sesión</button>
-					<button onclick="register()" id="register-btn">Registrar</button>
-					<button onclick="passwordForgotten()" id="forgotten-btn">He olvidado mi contraseña</button>
-					
-					
-					
+				<div id="log-btns">
+					<button onclick="login()" class="log-btn" id="login-btn">Iniciar sesión</button>
+					<button onclick="register()" class="log-btn" id="register-btn">Registrar</button>
+					<button onclick="passwordForgotten()" class="log-btn" id="forgotten-btn">He olvidado mi contraseña</button>
 				</div>
 			</div>
 		</div>
-
-		<div id="loggedin-div" style="display: none;">
-			<div id="profile-data">
-
-				<h3 id="user-welcome">Bienvenido/a</h3>
-				<div id="profile-image">
-					
+		<div id="account" style="display: none;">
+			<div id="account-data">
+				<!-- Filled with account.js -->
+				<h2 id="user-welcome">Bienvenido/a</h2>
+				<div id="account-image">
 				</div>
 				<h3>Datos del perfil</h3>
 				Nombre de usuario
-				<input type="text" placeholder="Nombre de usuario..." id="username-input">
+				<input type="text" placeholder="Nombre de usuario..." id="account-username-input">
 				Nombre
-				<input type="text" placeholder="Nombre..." id="name-input">
+				<input type="text" placeholder="Nombre..." id="account-name-input">
 				Apellidos
-				<input type="text" placeholder="Apellidos..." id="surname-input">
+				<input type="text" placeholder="Apellidos..." id="account-surname-input">
 				Email
-				<div id="email-data"></div>
+				<div id="account-email-data">email@gmail.com</div>
+				<button onclick="verifyEmail()" class="account-btn" id="verify-email">Verificar email</button>
+				<!-- TODO: EMAIL TICK WHEN VERIFIED, AND SIMILAR WHEN NOT -->
+				Fecha de nacimiento
+				<input type="date" placeholder="2000/12/31" id="account-birthday-input">
 				URL de foto de perfil
-				<input type="link" placeholder="https://picsum.photos/500/500" id="photourl-input">
-				Bio
-				<textarea rows="4" cols="50" placeholder="Bio..." id="bio-input"></textarea>
+				<input type="link" placeholder="https://picsum.photos/500/500" id="account-imagelink-input">
+				Biografía
+				<textarea rows="4" cols="50" placeholder="Bio..." id="account-bio-input"></textarea>
 				Texto libre
-				<textarea rows="4" cols="50" placeholder="Texto libre privado..." id="freetext-input"></textarea>
-				Fecha de nacimiento (dd/mm/YYYY)
-				<input type="text" placeholder="31/12/0000" id="birthdate-input">
-				<!-- Sexo
-				<input type="text" id="sex-input">
-				Nacionalidad
-				<input type="text" id="nationality">
-				DNI
-				<input type="text" id="dni-input">
-				Dirección
-				<input type="text" id="address-input">
-				 -->
+				<textarea rows="4" cols="50" placeholder="Texto libre..." id="account-freetext-input"></textarea>
 			</div>
-
-			<button onclick="update()">Actualizar datos</button>
-			<button onclick="logout()">Cerrar sesión</button>
-			<span id="verify-email"></span>
-			<button onclick="resetPassword()">Cambiar contraseña</button>
-			<button onclick="deleteAccount()">Borrar cuenta</button>
+			<div class="account-btns">
+				<button onclick="update()" class="account-btn">Actualizar datos</button>
+				<button onclick="logout()" class="account-btn">Cerrar sesión</button>
+				<button onclick="resetPassword()" class="account-btn">Cambiar contraseña</button>
+				<button onclick="deleteAccount()" class="account-btn" id="delete-account-btn">Borrar cuenta</button>
+			</div>
 		</div>
 	</div>
-
-
-
-
-
 	<footer>
 		<div class="footer-left">
 			<a href="cookies.html" target="_blank">Cookies</a>

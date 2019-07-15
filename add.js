@@ -1,10 +1,12 @@
 function show_add_projects(){
-	if(document.getElementById('add-projects-div').style.display == 'none'){
-		document.getElementById('add-projects-div').style.display = 'flex';
+	if(document.getElementById('add-projects').style.display == 'none'){
+		document.getElementById('add-projects').style.display = 'flex';
 	} else {
-		document.getElementById('add-projects-div').style.display = 'none';
+		document.getElementById('add-projects').style.display = 'none';
 	}
 }
+
+// Verified and show add-project
 firebase.auth().onAuthStateChanged(function(user){
 	if(user){
 		if(user.emailVerified){
