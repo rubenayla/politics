@@ -31,7 +31,7 @@ function add_project(){
 			alert('Error: ' + error.message);
 			console.log(error);
 		});
+		document.getElementById('project-title-input').value = null;
+		document.getElementById('project-description-input').value = null;
 	});
-	document.getElementById('project-title-input').value = null;
-	document.getElementById('project-description-input').value = null;
 }
