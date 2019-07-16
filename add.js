@@ -21,17 +21,16 @@ function add_project(){
 		var projects = snapshot.val();
 		console.log(Object.keys(projects));
 		var project_quantity = Object.keys(projects).length;
+		firebase.database().ref('projects/' + String(project_quantity + 1)).set({
+			date: 'deit',
+			title: document.getElementById('project-title-input').value,
+			description: document.getElementById('project-description-input').value,
+			uid: firebase.auth().currentUser.uid
+		}).catch(function(error){
+			alert('Error: ' + error.message);
+			console.log(error);
+		});
 	});
-	firebase.database().ref('projects/' + String(project_quantity + 1)).set({
-		date: 'deit',
-		title: document.getElementById('project-title-input').value,
-		description: document.getElementById('project-description-input').value,
-		uid: firebase.auth().currentUser.uid
-	}).catch(function(error){
-		alert('Error: ' + error.message);
-		console.log(error);
-	});
-
 	document.getElementById('project-title-input').value = null;
 	document.getElementById('project-description-input').value = null;
 }
