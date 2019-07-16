@@ -218,6 +218,15 @@ ion-icon {
 	margin: 8px 8px 32px 8px;
 	box-shadow: 1px 2px 4px 0 #0364;
 }
+.project {
+
+
+	padding: 20px;
+	margin: 16px;
+	background: white;
+	box-shadow: 1px 2px 6px 0 #0004;
+	border-radius: 8px;
+}
 
 
 

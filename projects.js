@@ -18,9 +18,10 @@ firebase.database().ref('projects').orderByChild('date').on('value',function(sna
 	document.getElementById('projects').innerHTML = "";
 	for (var i = 1; i <= project_quantity; i++) {
 		// Create html
-		var html = '<h2 id="project-title-' + String(i) + '"></h2>';
+		var html = '<div class="project">';
+		html += '<h2 id="project-title-' + String(i) + '"></h2>';
 		html += '<p id="project-description-' + String(i) + '"></p>';
-		
+		html += '</div>';
 		// Apply html
 		document.getElementById('projects').innerHTML += html;
 
