@@ -75,8 +75,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 function register(){
 
-	var email = document.getElementById('email-input-login').value;
-	var pwd = document.getElementById('pwd-input-login').value;
+	var email = document.getElementById('email-input').value;
+	var pwd = document.getElementById('pwd-input').value;
 
 	firebase.auth().createUserWithEmailAndPassword(email, pwd).catch(function(error) {
 		alert('Error: ' + error.message);
@@ -132,7 +132,7 @@ function google_login(){
 // 	});
 // }
 function passwordForgotten(){
-	var email = document.getElementById('email-input-login').value;
+	var email = document.getElementById('email-input').value;
 	var auth = firebase.auth();
 
 	auth.sendPasswordResetEmail(email).then(function() {
@@ -159,7 +159,14 @@ function verifyEmail(){
 	}).catch(function(error){
 		alert('Error: ' + error.message);
 		console.log(error);
-	})
+	});
+	setTimeout(function() {
+		if (user.emailVerified == true){
+			document.getElementById('verify-email').style.display = 'none';
+		} else {
+			document.getElementById('verify-email').style.display = 'flex';
+		}
+	}, 1000);
 }
 
 function deleteAccount() {
