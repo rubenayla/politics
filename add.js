@@ -27,8 +27,10 @@ function add_project(){
 		var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 		var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 		var date_time = date+' '+time;
+		var timestamp = Timestamp(today);
 
 		firebase.database().ref('projects/' + String(project_quantity + 1)).set({
+			timestamp: timestamp,
 			date: date,
 			title: title,
 			description: description,
