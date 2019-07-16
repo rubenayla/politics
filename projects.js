@@ -19,4 +19,3 @@ firebase.database().ref('projects').orderByChild('date').on('value',function(sna
 		document.getElementById('project-description-' + String(i)).innerHTML = projects[i].description;
 	}
 });
-

@@ -19,10 +19,16 @@ firebase.auth().onAuthStateChanged(function(user){
 function add_project(){
 	firebase.database().ref('projects').once('value').then(function(snapshot){
 		var project_quantity = Object.keys(snapshot.val()).length;
+
 		var title = document.getElementById('project-description-input').value;
 		var description = document.getElementById('project-description-input').value;
+
+		var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+		var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+		var date_time = date+' '+time;
+
 		firebase.database().ref('projects/' + String(project_quantity + 1)).set({
-			date: '1000-12-31',
+			date: date,
 			title: title,
 			description: description,
 			uid: firebase.auth().currentUser.uid
