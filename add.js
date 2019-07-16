@@ -21,7 +21,7 @@ function add_project(){
 		var project_quantity = Object.keys(snapshot.val()).length;
 		var title = document.getElementById('project-description-input').value;
 		var description = document.getElementById('project-description-input').value;
-		
+		console.log(title + description);
 		firebase.database().ref('projects/' + String(project_quantity + 1)).set({
 			date: '1000-12-31',
 			title: title,
