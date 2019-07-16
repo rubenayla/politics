@@ -26,16 +26,17 @@ firebase.auth().onAuthStateChanged(function(user) {
 			// removed it. It must go away.
 			document.getElementById('account-image').innerHTML = null;
 		}
-		document.getElementById('account-name-input').value = name;
-		document.getElementById('account-email-data').innerHTML = email;
+		document.getElementById('account-name-input').value = user.displayName;
+		document.getElementById('account-email-data').innerHTML = user.email;
 		document.getElementById('account-imagelink-input').value = user.photoURL;
 
 		// Show DB data
-		firebase.database().ref('users/' + user.uid).once('value').then(function(snapshot){
+		firebase.database().ref('users/' + user.uid).on('value',function(snapshot){
 			// If the user exists at the DB... (snapshot.val())
 			// (otherwise wait the register function to create it. It must be first
 			// authenticated)
-			if(snapshot.val() != null){
+			user = firebase.auth().currentUser;
+			if(snapshot.val() != null && user != null){
 				if (snapshot.val().username != undefined){
 					document.getElementById('account-username-input').value = snapshot.val().username;
 				}
@@ -85,7 +86,7 @@ function register(){
 	// Just after registry, the onAuthStateChanged function will try to show data that 
 	// still doesn't exist in the DB, and will show an error. Wait 100ms to have a 
 	// registered user, and then update the data to the DB.
-	setTimeout(update, 1000);
+	setTimeout(update, 2000);
 }
 function login(){
 	var email = document.getElementById('email-input').value;
@@ -93,7 +94,7 @@ function login(){
 
 	firebase.auth().signInWithEmailAndPassword(email, pwd).catch(function(error) {
 		// Handle Errors here.
-		alert('Error: ' + errorMessage);
+		alert('Error: ' + error.message);
 	});
 
 	// (Don't keep the input data in the html)
@@ -155,18 +156,12 @@ function resetPassword(){
 }
 function verifyEmail(){
 	firebase.auth().currentUser.sendEmailVerification().then(function(){
-		alert('Email sent');
+		alert('Email enviado. Recarga la página ver los efectos');
 	}).catch(function(error){
 		alert('Error: ' + error.message);
 		console.log(error);
 	});
-	setTimeout(function() {
-		if (user.emailVerified == true){
-			document.getElementById('verify-email').style.display = 'none';
-		} else {
-			document.getElementById('verify-email').style.display = 'flex';
-		}
-	}, 1000);
+	
 }
 
 function deleteAccount() {
@@ -189,27 +184,29 @@ function update(){
 	var user = firebase.auth().currentUser;
 	
 	// Update auth data (name and photoURL)
-	user.updateProfile({
-		displayName: document.getElementById('account-name-input').value,
-		photoURL: document.getElementById('account-imagelink-input').value
-	}).then(function() {
-		// Update successful.
-		// alert('Update successful');
-	}).catch(function(error) {
-		// An error happened.
-		// alert(error);
-	});
+	if(user){
+		user.updateProfile({
+			displayName: document.getElementById('account-name-input').value,
+			photoURL: document.getElementById('account-imagelink-input').value
+		}).then(function() {
+			// Update successful.
+			// alert('Update successful');
+		}).catch(function(error) {
+			// An error happened.
+			// alert(error);
+		});
 
-	// Profile data to DB
-	firebase.database().ref('users/' + user.uid).set({
-		email: user.email,
-		username: document.getElementById('account-username-input').value,
-		name: user.displayName,
-		surname: document.getElementById('account-surname-input').value,
-		photo_url: user.photoURL,
-		emailVerified: user.emailVerified, // Not secure
-		bio: document.getElementById('account-bio-input').value,
-		freetext: document.getElementById('account-freetext-input').value,
-		birthdate: document.getElementById('account-birthday-input').value
-	});
+		// Profile data to DB
+		firebase.database().ref('users/' + user.uid).set({
+			email: user.email,
+			username: document.getElementById('account-username-input').value,
+			name: user.displayName,
+			surname: document.getElementById('account-surname-input').value,
+			photo_url: user.photoURL,
+			emailVerified: user.emailVerified, // Not secure
+			bio: document.getElementById('account-bio-input').value,
+			freetext: document.getElementById('account-freetext-input').value,
+			birthdate: document.getElementById('account-birthday-input').value
+		});
+	}
 }
