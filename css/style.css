@@ -210,11 +210,12 @@ ion-icon {
 	height: 64px;
 }
 #who-are-we {
+	flex-flow: column;
+
 	background: #cde;
-
-
 	border-radius: 16px;
-	padding: 16px;
+	padding: 32px;
+	margin: 8px 8px 32px 8px;
 	box-shadow: 1px 2px 4px 0 #0364;
 }
 

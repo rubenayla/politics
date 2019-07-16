@@ -1,6 +1,8 @@
 // Who we are, to newcomers
 firebase.auth().onAuthStateChanged(function(user){
-	if(user){
+	if(user == null){
+		document.getElementById('who-are-we').style.display = 'flex';
+	} else{
 		document.getElementById('who-are-we').style.display = 'none';
 	}
 });
