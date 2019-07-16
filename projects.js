@@ -1,3 +1,10 @@
+// Who we are, to newcomers
+firebase.auth().onAuthStateChanged(function(user){
+	if(user){
+		document.getElementById('who-are-we').style.display = 'none';
+	}
+});
+
 var project_quantity = -1;
 // Load projects from DB to html
 firebase.database().ref('projects').orderByChild('date').on('value',function(snapshot){

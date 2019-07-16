@@ -209,7 +209,14 @@ ion-icon {
 	width: 64px;
 	height: 64px;
 }
+#who-are-we {
+	background: #cde;
 
+
+	border-radius: 16px;
+	padding: 16px;
+	box-shadow: 1px 2px 4px 0 #0364;
+}
 
 
 
