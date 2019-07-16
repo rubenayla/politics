@@ -18,10 +18,10 @@ firebase.auth().onAuthStateChanged(function(user){
 
 function add_project(){
 	firebase.database().ref('projects').once('value').then(function(snapshot){
-		console.log(snapshot);
+		var projects = snapshot.val();
+		console.log(Object.keys(projects));
+		var project_quantity = Object.keys(projects).length;
 	});
-	// projects??
-	var project_quantity = Object.keys(projects).length;
 	firebase.database().ref('projects/' + String(project_quantity + 1)).set({
 		date: 'deit',
 		title: document.getElementById('project-title-input').value,
