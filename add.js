@@ -31,6 +31,6 @@ function add_project(){
 			console.log(error);
 		});
 	});
-	// document.getElementById('project-title-input').value = null;
-	// document.getElementById('project-description-input').value = null;
+	document.getElementById('project-title-input').value = null;
+	document.getElementById('project-description-input').value = null;
 }
