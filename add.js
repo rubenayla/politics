@@ -23,6 +23,7 @@ function add_project(){
 		var title = document.getElementById('project-description-input').value;
 		var description = document.getElementById('project-description-input').value;
 
+		var today = new Date();
 		var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 		var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 		var date_time = date+' '+time;
