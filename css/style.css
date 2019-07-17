@@ -177,6 +177,37 @@ header a:hover {
 	background: #421ebc;
 	box-shadow: 1px 1px 8px 0 #0006;
 }
+#more {
+	position: fixed;
+	display: flex;
+	flex-flow: column;
+	max-height: 90%;
+	z-index: 20;
+	top: 54px; /*2px over the header*/
+	right: 8px;
+	
+	background: #fff;
+	box-shadow: 0 1px 8px 0px #0004;
+	border-radius: 8px;
+
+	padding: 32px;
+	justify-content: center;
+	text-align: center;
+	font-size: medium;
+}
+#more ul {
+	display: flex;
+	flex-flow: column;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 90%;
+}
+#more li {
+	padding: 8px;
+}
+
+
 
 .first-section {
 	display: flex;

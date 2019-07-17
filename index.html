@@ -43,9 +43,27 @@
 				<li>
 					<button onclick="show_add_projects()" id="add-button">Añadir</button>
 				</li>
+				<li>
+					<a href="">
+						<ion-icon name="more"></ion-icon>
+					</a>
+				</li>
 			</ul>
 		</nav>
 	</header>
+	<div id="more" style="display: none;">
+		<ul>
+			<li>
+				feedback
+			</li>
+			<li>
+				This project at GitHub
+			</li>
+			<li>
+				Contact
+			</li>
+		</ul>
+	</div>
 	<div id="add-projects" style="display: none;">
 		<div id="has-to-be-verified">
 			<p>Para poder añadir un proyecto debes iniciar sesión y verificar el email con el siguiente enlace:</p>
@@ -91,7 +109,7 @@
 	</footer>
 
 
-
+	<script type="text/javascript" src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
 	<script type="text/javascript">
 		// Initialize Firebase

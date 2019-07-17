@@ -9,23 +9,30 @@ firebase.auth().onAuthStateChanged(function(user){
 
 var project_quantity = -1;
 // Load projects from DB to html
-firebase.database().ref('projects').orderByChild('date').on('value',function(snapshot){
-	var projects = snapshot.val();
-	project_quantity = Object.keys(projects).length;
-	// console.log(projects);
-	// console.log(typeof(projects));
-	// console.log(Object.keys(projects).length);
+firebase.database().ref('projects').on('value',function(snapshot){
+	// console.log(snapshot.val());
+	var keys = Object.keys(snapshot.val());
+	var projects = [];
+
+	for (var i = 0; i < keys.length; i++) {
+		firebase.database().ref('projects/' + keys[i]).on('value',function(snapshot){
+			projects.push(snapshot.val());
+
+		});
+	}
+	console.log(projects);
 	document.getElementById('projects').innerHTML = "";
-	for (var i = 1; i <= project_quantity; i++) {
+	for (var i = 0; i < projects.length; i++) {
 		// Create html
 		var html = '<div class="project">';
-		html += '<h2 id="project-title-' + String(i) + '"></h2>';
-		html += '<p id="project-description-' + String(i) + '"></p>';
+		html += '<h2 id="project-title-' + projects[i].timestamp + '"></h2>';
+		html += '<p id="project-description-' + projects[i].timestamp + '"></p>';
 		html += '</div>';
 		// Apply html
 		document.getElementById('projects').innerHTML += html;
 
-		document.getElementById('project-title-' + String(i)).innerHTML = projects[i].title;
-		document.getElementById('project-description-' + String(i)).innerHTML = projects[i].description;
+		document.getElementById('project-title-' + projects[i].timestamp).innerHTML = projects[i].title;
+		document.getElementById('project-description-' + projects[i].timestamp).innerHTML = projects[i].description;
+
 	}
 });

@@ -82,8 +82,8 @@
 	padding: 8px;
 }
 .log-btn {
-	padding: 12px;
-	margin: 2px;
+	padding: 12px 8px;
+	margin: 2px 8px;
 
 	border-radius: 6px;
 	transition: color .1s, background .1s;
@@ -149,11 +149,12 @@
 	margin: 8px;
 }
 .account-btn {
-	padding: 8px;
-	margin: 4px;
+	display: flex;
 	justify-content: center;
 	font-size: 90%;
 
+	padding: 8px;
+	margin: 4px;
 	background: transparent;
 	color: #421ebc;
 	transition: color .1s, background .1s;
