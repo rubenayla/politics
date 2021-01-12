@@ -13,3 +13,7 @@ The person/organization that has proposed some change could itself be willing to
 
 
 ![sketch.png](files/sketch.png)
+
+
+Similar ideas, related projects:
+https://youtu.be/quxoa44ucDg
